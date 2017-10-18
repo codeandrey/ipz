@@ -1,0 +1,302 @@
+
+<DOCTYPE></DOCTYPE>
+<html lang="ru">
+  <head>
+    <title>Frontend Hcode</title>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <div class="headerTop__logo"><a class="logo--text" href="/">Logo</a></div>
+            </div>
+            <div class="col-md-10">
+              <div class="headerNav">
+                <nav class="menu">
+                  <li class="menu-item"><a href="/">Головна</a></li>
+                  <li class="menu-item"><a href="/company.html">Товариство</a></li>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="main">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="page-header">			
+                <h2 class="page__title">Товариство</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="form__wrap">
+                <div id="tabs">
+                  <ul class="nav nav-tabs">
+                    <li class="tabs__item active"><a class="tabs__item--link" href="#tab__company" data-toggle="tab">Товариство</a></li>
+                    <li class="tabs__item"><a class="tabs__item--link" href="#tab__kvedlist" data-toggle="tab">Кведи	</a></li>
+                    <li class="tabs__item"><a class="tabs__item--link" href="#tab__shareholders" data-toggle="tab">Учасники</a></li>
+                  </ul>
+                </div>
+                <form class="form-main" id="form-main" action="ajax_send.php">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="tab__company">
+                      <fieldset id="company">
+                        <table class="table">
+                          <tr>
+                            <td>Українською мовою</td>
+                            <td> 
+                              <input class="form-control" type="text" name="TOV_NAME"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Російською мовою </td>
+                            <td>
+                              <input class="form-control" type="text" name="TOV_NAME_RU"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Англійською мовою - згідно з  транслітераціею</td>
+                            <td> 
+                              <input class="form-control" type="text" name="TOV_NAME_EN"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Індекс</td>
+                            <td> 
+                              <input class="form-control" type="number" name="TOVPOSTCODE"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Область</td>
+                            <td> 
+                              <input class="form-control" type="text" name="TOVREGION"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Місто</td>
+                            <td>
+                              <input class="form-control" type="text" name="TOVCITY"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Вулиця</td>
+                            <td>
+                              <input class="form-control" type="text" name="TOVSTREET"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Будинок</td>
+                            <td>
+                              <input class="form-control" type="text" name="TOVBUILD"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Місто</td>
+                            <td>
+                              <input class="form-control" type="text" name="CITY"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Дата підписання документу </td>
+                            <td> 
+                              <label>Дата
+                                <input class="form-control" type="number" name="D_S"/>
+                              </label>
+                              <label>Місяць
+                                <input class="form-control" type="number" name="M_S"/>
+                              </label>
+                              <label>Рік
+                                <input class="form-control" type="number" name="Y_S"/>
+                              </label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Розмір статутного капіталу, грн. </td>
+                            <td> 
+                              <input class="form-control" type="number" name="TOTAL_UAH"/>
+                            </td>
+                          </tr>
+                        </table>
+                      </fieldset>
+                    </div>
+                    <div class="tab-pane" id="tab__kvedlist">
+                      <fieldset id="kvedlist0">
+                        <div class="button__wrap">
+                          <button class="btn btn-success add-kved"><i class="fa fa-plus"></i></button>
+                          <button class="btn btn-danger del-kved"><i class="fa fa-minus"></i></button>
+                        </div>
+                        <table class="table-kved">
+                          <tr class="kved__item">
+                            <td> 
+                              <label>Код кведа
+                                <input class="form-control" type="number" name="KVEDNUM"/>
+                              </label>
+                            </td>
+                            <td> 
+                              <label>Назва кведа
+                                <input class="form-control" type="text" name="KVEDNAME"/>
+                              </label>
+                            </td>
+                          </tr>
+                        </table>
+                      </fieldset>
+                    </div>
+                    <div class="tab-pane" id="tab__shareholders">
+                      <div class="button__wrap">
+                        <button class="btn btn-success add-tabs"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-danger del-tabs"><i class="fa fa-minus"></i></button>
+                      </div>
+                      <div id="sub__tabs">
+                        <ul class="nav nav-tabs">
+                          <li class="tabs__item active"><a class="tabs__item--link" href="#shareholders0" data-toggle="tab">Учасник</a></li>
+                        </ul>
+                      </div>
+                      <div class="tab-content">
+                        <fieldset class="tab-pane active" id="shareholders0">
+                          <table class="table">
+                            <tr>
+                              <td>Прізвище</td>
+                              <td> 
+                                <input class="form-control" type="text" name="LNAME"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>label Ім’я</td>
+                              <td> 
+                                <input class="form-control" type="text" name="FNAME"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>По батькові</td>
+                              <td> 
+                                <input class="form-control" type="text" name="MNAME"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Серія</td>
+                              <td> 
+                                <input class="form-control" type="text" name="PASSER"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Номер паспорта </td>
+                              <td> 
+                                <input class="form-control" type="number" name="PASNO"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Ким і коли виданий</td>
+                              <td> 
+                                <input class="form-control" type="text" name="RV_GU"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Місце проживання</td>
+                              <td> 
+                                <input class="form-control" type="text" name="PASDATA"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Індекс</td>
+                              <td> 
+                                <input class="form-control" type="number" name="REG_POSTCODE"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Область</td>
+                              <td> 
+                                <input class="form-control" type="text" name="REG_REGION"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Місто</td>
+                              <td> 
+                                <input class="form-control" type="text" name="REG_CITY"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Вулиця</td>
+                              <td> 
+                                <input class="form-control" type="text" name="REG_SRTEET"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Будинок</td>
+                              <td> 
+                                <input class="form-control" type="text" name="REG_BUILD"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Квартира</td>
+                              <td> 
+                                <input class="form-control" type="text" name="REG_APT"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>ІПН</td>
+                              <td> 
+                                <input class="form-control" type="number" name="IPN"/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Вартісне  вираження внеску, грн</td>
+                              <td> 
+                                <input class="form-control" type="number" name="SHAREUAH" min="0" max="100" placeholder=""/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Частка у статутному капіталі Товариства</td>
+                              <td>
+                                <input class="form-control" type="number" name="SHARE" placeholder=""/>
+                              </td>
+                            </tr>
+                          </table>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="btn-group">
+                      <button class="btn btn-cansel">Відміна</button>
+                      <button class="btn btn-success submit">Зберегти</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="empty"></div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer__wrap">
+            <div class="footer__logo"><a class="logo--text" href="/"> Logo</a></div>
+          </div>
+        </div>
+      </div>
+      <div id="msg"></div>
+    </footer><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
+    <script src="libs/jquery.js"></script>
+    <script src="libs/bootstrap.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+  </body>
+</html>

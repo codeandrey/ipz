@@ -1,0 +1,176 @@
+div.container
+	div.row
+		div.col-md-12.col-sm-12.col-xs-12
+			div.page-header 			
+				h2.page__title Товариство
+	div.row
+		div.col-md-12.col-sm-12.col-xs-12
+			div.form__wrap
+				div(id="tabs")
+					ul.nav.nav-tabs
+						li.tabs__item.active
+							a(href="#tab__company" data-toggle="tab").tabs__item--link Товариство
+						li.tabs__item
+							a(href="#tab__kvedlist" data-toggle="tab").tabs__item--link Кведи	
+						li.tabs__item
+							a(href="#tab__shareholders" data-toggle="tab").tabs__item--link Учасники
+
+				form( id="form-main" action='ajax_send.php').form-main
+					div.tab-content
+						div.tab-pane(id="tab__company").active
+							fieldset(id="company")
+								table.table
+									tr
+										td Українською мовою
+										td 
+											input(type="text" name="TOV_NAME").form-control
+									tr
+										td Російською мовою 
+										td
+											input(type="text" name="TOV_NAME_RU").form-control
+									tr
+										td Англійською мовою - згідно з  транслітераціею
+										td 
+											input(type="text" name="TOV_NAME_EN").form-control
+									tr
+										td Індекс
+										td 
+											input(type="number" name="TOVPOSTCODE").form-control
+									tr
+										td Область
+										td 
+											input(type="text" name="TOVREGION").form-control
+									tr
+										td Місто
+										td
+											input(type="text" name="TOVCITY").form-control
+									tr
+										td Вулиця
+										td
+											input(type="text" name="TOVSTREET").form-control
+									tr
+										td Будинок
+										td
+											input(type="text" name="TOVBUILD").form-control
+									tr
+										td Місто
+										td
+											input(type="text" name="CITY").form-control
+									tr
+										td Дата підписання документу 
+										td 
+											label Дата
+												input(type="number" name="D_S").form-control
+									
+											label Місяць
+												input(type="number" name="M_S").form-control
+									
+											label Рік
+												input(type="number" name="Y_S").form-control
+									tr
+										td Розмір статутного капіталу, грн. 
+										td 
+											input(type="number" name="TOTAL_UAH").form-control
+									
+						div(id="tab__kvedlist").tab-pane
+							fieldset(id="kvedlist0")
+								div.button__wrap
+									button.btn.btn-success.add-kved
+										i.fa.fa-plus
+									button.btn.btn-danger.del-kved
+										i.fa.fa-minus
+								table.table-kved
+									tr.kved__item
+										td 
+											label Код кведа
+												input(type="number"  name="KVEDNUM").form-control
+										td 
+											label Назва кведа
+												input( type="text" name="KVEDNAME").form-control
+								
+
+						div(id="tab__shareholders").tab-pane
+							div.button__wrap
+								button.btn.btn-success.add-tabs
+									i.fa.fa-plus
+								button.btn.btn-danger.del-tabs
+									i.fa.fa-minus
+							div(id="sub__tabs")
+								ul.nav.nav-tabs
+									li.tabs__item.active
+										a(href="#shareholders0" data-toggle="tab").tabs__item--link Учасник
+							div.tab-content
+								fieldset(id="shareholders0").tab-pane.active
+									table.table
+										tr
+											td Прізвище
+											td 
+												input(type="text" name="LNAME").form-control
+										tr
+											td label Ім’я
+											td 
+												input(type="text" name="FNAME").form-control
+										tr
+											td По батькові
+											td 
+												input(type="text" name="MNAME").form-control
+										tr
+											td Серія
+											td 
+												input(type="text" name="PASSER").form-control
+										tr
+											td Номер паспорта 
+											td 
+												input(type="number" name="PASNO").form-control
+										tr
+											td Ким і коли виданий
+											td 
+												input(type="text" name="RV_GU").form-control
+										tr
+											td Місце проживання
+											td 
+												input(type="text" name="PASDATA").form-control
+										tr
+											td Індекс
+											td 
+												input(type="number" name="REG_POSTCODE").form-control
+										tr
+											td Область
+											td 
+												input(type="text" name="REG_REGION").form-control
+										tr
+											td Місто
+											td 
+												input(type="text" name="REG_CITY").form-control
+										tr
+											td Вулиця
+											td 
+												input(type="text" name="REG_SRTEET").form-control
+										tr
+											td Будинок
+											td 
+												input(type="text" name="REG_BUILD").form-control
+										tr
+											td Квартира
+											td 
+												input(type="text" name="REG_APT").form-control
+										tr
+											td ІПН
+											td 
+												input(type="number" name="IPN").form-control
+										
+										tr
+											td Вартісне  вираження внеску, грн
+											td 
+												input(type="number" name="SHAREUAH" min="0" max="100" placeholder="").form-control
+										tr
+											td Частка у статутному капіталі Товариства
+											td
+												input(type="number" name="SHARE" placeholder="").form-control
+																							
+					div.row
+						div.btn-group
+							button.btn.btn-cansel Відміна
+							button.btn.btn-success.submit Зберегти
+
+
